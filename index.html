@@ -7,18 +7,20 @@
         <title> My Shopping List</title>
     </head>
     <body ng-app="myShoppingList">
-       <div ng-controller="myCtrl" class="container">
-         <header class=mainborder>
+       <div ng-controller="myCtrl">
+         <header>
            <h3>My Shopping List</h3>
          </header>
          <div ng-app="myShoppingList" ng-controller="myCtrl">
           <ul>
             <li ng-repeat="x in products">{{x}}
-             <span ng-click="removeItem($index)">&times;</span>
+             <span ng-click="removeItem($index)" class='left'>&times;</span>
             </li>
           </ul>
-          <input ng-model="addMe">
+          <div class='section'>
+          <input placeholder="Add shopping items here" ng-model="addMe">
           <button ng-click="addItem()">Add</button>
+          </div>
           <p>{{errortext}}</p>
          </div>
        <script src="app.js"></script>
